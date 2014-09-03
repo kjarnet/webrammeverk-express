@@ -1,13 +1,10 @@
-var express = require('express')
-var app = express();
+var http = require("http");
+http.createServer(function(req, res) { var html = "<!doctype html>" +
+"<html><head><title>Hello world</title></head>" + "<body><h1>Hello, world!</h1></body></html>";
+res.writeHead(200, {
+    // set the type of content we're returning "Content-Type": "text/html",
+// set the length of our content
+"Content-Length": html.length });
+// end the response, sending it and returning our HTML
+res.end(html); }).listen(5000, "127.0.0.1");
 
-app.set('port', (process.env.PORT || 5000))
-app.use(express.static(__dirname + '/public'))
-
-app.get('/', function(request, response) {
-  response.send('Hello World!')
-})
-
-app.listen(app.get('port'), function() {
-  console.log("Node app is running at localhost:" + app.get('port'))
-})

@@ -1,13 +1,17 @@
 {
   "name": "expressws",
   "version": "0.1.0",
-  "description": "A sample Node.js app using Express 4",
+  "description": "Example app for Node/Express intro workshop",
   "main": "index.js",
   "scripts": {
-    "start": "node index.js"
+    "start": "node index.js",
+    "debug": "debug-node index.js",
+    "test": "./node_modules/vows/bin/vows tests.js"
   },
   "dependencies": {
-    "express": "~3.4.x"
+  },
+  "devDependencies": {
+      "vows": "0.7.x"
   },
   "engines": {
     "node": "0.10.x"
@@ -18,12 +22,8 @@
   },
   "keywords": [
     "node",
-    "heroku",
     "express"
   ],
-  "author": "Mark Pundsack",
-  "contributors": [
-    "Zeke Sikelianos <zeke@sikelianos.com> (http://zeke.sikelianos.com)"
-  ],
-  "license": "MIT"
+  "author": "Øystein Kjærnet",
+  "license": "unlicense"
 }
