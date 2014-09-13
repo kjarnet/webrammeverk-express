@@ -9,6 +9,7 @@
     "test": "./node_modules/vows/bin/vows tests.js"
   },
   "dependencies": {
+      "express": "4.x"
   },
   "devDependencies": {
       "vows": "0.7.x"
