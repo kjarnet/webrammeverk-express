@@ -4,13 +4,18 @@ layout: default
 
 ## Følg disse stegene for å sette opp et prosjekt klart for Express workshop-en:
 
-1. Installer [node](http://nodejs.org).
+0. Installer [node](http://nodejs.org).
+1. Sett opp ditt favoritt IDE for JavaScript utvikling. Tips:
+    * IntelliJ har plugins for JavaScript og Node.
+    * Det finnes plugins for JavaScript-linteren "JSHint" for de fleste editorer.
+    IntelliJ har støtte for dette gjennom JavaScript-pluginet.
 2. Installer Node-Inspector for debugging.
     * Installeres via pakkehåndtereren til node, "npm".
     * npm installerer som default pakker lokalt til mappa `node_modules` i current directory.
     For å installere globalt må du bruke parameteret `-g` eller `--global`.
     (I ubuntu og osx må du kjøre kommandoen med sudo for å installere globalt.)
     * `sudo npm install -g node-inspector`
+    * Node-Inspector fungerer kun med webkit-baserte browsere (Chrome, Opera, Safari ...).
 3. Klon git-repoet: git clone https://github.com/kjarnet/webrammeverk-express.git
 4. Hvis du vil deploye til Heroku:
     * Installer [Heroku toolbelt](https://devcenter.heroku.com/articles/getting-started-with-nodejs#set-up)
