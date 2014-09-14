@@ -1,3 +1,5 @@
+// Check this article for how to test express routes:
+// http://javascriptplayground.com/blog/2014/07/testing-express-routes/
 var vows = require('vows'),
     assert = require('assert');
 

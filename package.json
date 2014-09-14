@@ -1,15 +1,19 @@
 {
   "name": "expressws",
   "version": "0.1.0",
+  "private": true,
   "description": "Example app for Node/Express intro workshop",
   "main": "index.js",
   "scripts": {
-    "start": "node index.js",
+    "start": "node ./bin/www",
     "debug": "debug-node index.js",
     "test": "./node_modules/vows/bin/vows tests.js"
   },
   "dependencies": {
-      "express": "4.x"
+      "express": "4.x",
+      "body-parser": "~1.8.1",
+      "debug": "~2.0.0",
+      "hjs": "~0.0.6"
   },
   "devDependencies": {
       "vows": "0.7.x"
