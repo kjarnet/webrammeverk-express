@@ -36,6 +36,10 @@ layout: default
     * `npm test` bruker testrunner-en "mocha" til å kjøre testene under test/-folderen.
     * Dokumentasjon for testrammeverk: [mocha](http://visionmedia.github.io/mocha/) (test-runner-en)
       og [chai](http://chaijs.com/api/bdd/) (assertion-biblioteket).
+    * Mocha kan kjøres kontinuerlig, og vil da kjøre testene på nytt hver gang en fil endres:
+      `./node_modules/mocha/bin/mocha -w`.
+    * Du kan også installere mocha globalt for å slippe `./node_modules/mocha/bin` foran "mocha":
+      `sudo npm install -g mocha`
 12. Start node-programmet.
     * `npm start` kjører todoapp.js i node.
     * Dette starter en http-server på [port 3000](http://localhost:3000).
