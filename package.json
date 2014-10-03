@@ -16,7 +16,8 @@
   },
   "devDependencies": {
     "chai": "^1.9.2",
-    "mocha": "^1.21.4"
+    "mocha": "^1.21.4",
+    "supertest": "^0.14.0"
   },
   "engines": {
     "node": "0.10.x"
@@ -32,5 +33,5 @@
     "workshop"
   ],
   "author": "Øystein Kjærnet",
-  "license": "unlicense"
+  "license": "Unlicense"
 }
