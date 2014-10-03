@@ -27,15 +27,16 @@ layout: default
     * `npm install` installerer pakker beskrevet i "dependencies" og "devDependencies"
     til `node_modules` mappa.
     * Avhengighetene definert for dette prosjektet er
-        * [mocha](http://visionmedia.github.io/mocha/) og [chai](http://chaijs.com/) for enhetstesting
+        * [mocha](http://visionmedia.github.io/mocha/), [chai](http://chaijs.com/) og [supertest](https://github.com/visionmedia/supertest) for enhetstesting
         * [debug](https://github.com/visionmedia/debug) for logging
         * [hogan (hjs)](http://twitter.github.io/hogan.js/) templating
         * og express.
 11. Kjør tester
     * npm kan også kjøre kommandoer definert i "scripts" i package.json.
     * `npm test` bruker testrunner-en "mocha" til å kjøre testene under test/-folderen.
-    * Dokumentasjon for testrammeverk: [mocha](http://visionmedia.github.io/mocha/) (test-runner-en)
-      og [chai](http://chaijs.com/api/bdd/) (assertion-biblioteket).
+    * Dokumentasjon for testrammeverk: [mocha](http://visionmedia.github.io/mocha/) (test-runner-en),
+      [chai](http://chaijs.com/api/bdd/) (assertion-biblioteket) og
+      [supertest](https://github.com/visionmedia/supertest) (routes-test-hjelper).
     * Mocha kan kjøres kontinuerlig, og vil da kjøre testene på nytt hver gang en fil endres:
       `./node_modules/mocha/bin/mocha -w`.
     * Du kan også installere mocha globalt for å slippe `./node_modules/mocha/bin` foran "mocha":
