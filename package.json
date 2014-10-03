@@ -5,18 +5,18 @@
   "description": "Example app for Node/Express intro workshop",
   "main": "index.js",
   "scripts": {
-    "start": "node ./bin/www",
-    "debug": "debug-node index.js",
-    "test": "./node_modules/vows/bin/vows tests.js"
+    "start": "DEBUG=webrammeverk-express node ./bin/www",
+    "test": "mocha"
   },
   "dependencies": {
-      "express": "4.x",
-      "body-parser": "~1.8.1",
-      "debug": "~2.0.0",
-      "hjs": "~0.0.6"
+    "express": "4.x",
+    "body-parser": "^1.8.1",
+    "debug": "^2.0.0",
+    "hjs": "^0.0.6"
   },
   "devDependencies": {
-      "vows": "0.7.x"
+    "chai": "^1.9.2",
+    "mocha": "^1.21.4"
   },
   "engines": {
     "node": "0.10.x"
@@ -27,7 +27,9 @@
   },
   "keywords": [
     "node",
-    "express"
+    "express",
+    "example",
+    "workshop"
   ],
   "author": "Øystein Kjærnet",
   "license": "unlicense"
