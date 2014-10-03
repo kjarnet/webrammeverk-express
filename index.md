@@ -9,7 +9,7 @@ layout: default
     * IntelliJ har plugins for JavaScript og Node.
     * Det finnes plugins for JavaScript-linteren "JSHint" for de fleste editorer.
     IntelliJ har støtte for dette gjennom JavaScript-pluginet.
-2. Installer Node-Inspector for debugging.
+2. Installer [Node-Inspector](https://github.com/node-inspector/node-inspector) for debugging.
     * Installeres via pakkehåndtereren til node, "npm".
     * npm installerer som default pakker lokalt til mappa `node_modules` i current directory.
     For å installere globalt må du bruke parameteret `-g` eller `--global`.
@@ -40,7 +40,15 @@ layout: default
     * `npm start` kjører todoapp.js i node.
     * Dette starter en http-server på [port 3000](http://localhost:3000).
 13. Debug programmet med chrome dev-tools:
-    * `debug-node todoapp.js` kjører todoapp.js via via node-inspector.
+    * `node-debug /bin/www` kjører todoapp.js via via node-inspector.
     * Åpne [http://127.0.0.1:8080/debug?port=5858](http://127.0.0.1:8080/debug?port=5858)
     i Chrome.
+    * For å debugge enhetstestene:
+        * kjør `./node_modules/mocha/bin/mocha --debug-brk`.
+        * Åpne en ny terminal og kjør `node-inspector`.
+        * Åpne [http://127.0.0.1:8080/debug?port=5858](http://127.0.0.1:8080/debug?port=5858)
+        i Chrome. Den vil da være pauset på første linje i mocha-test-runneren.
+        * Åpne test-fila du vil debugge, sett en breakpoint og klikk "Resume" (F8).
+
+    
 
