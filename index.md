@@ -26,16 +26,21 @@ layout: default
     fila til å beskrive avhengigheter.
     * `npm install` installerer pakker beskrevet i "dependencies" og "devDependencies"
     til `node_modules` mappa.
-    * Avhengighetene definert for dette prosjektet er [vows](http://vowsjs.org/)
-    for enhetstesting og express.
+    * Avhengighetene definert for dette prosjektet er
+        * [mocha](http://visionmedia.github.io/mocha/) og [chai](http://chaijs.com/) for enhetstesting
+        * [debug](https://github.com/visionmedia/debug) for logging
+        * [hogan (hjs)](http://twitter.github.io/hogan.js/) templating
+        * og express.
 11. Kjør tester
     * npm kan også kjøre kommandoer definert i "scripts" i package.json.
-    * `npm test` bruker testrunner-en "vows" til å kjøre testene i test.js.
+    * `npm test` bruker testrunner-en "mocha" til å kjøre testene under test/-folderen.
+    * Dokumentasjon for testrammeverk: [mocha](http://visionmedia.github.io/mocha/) (test-runner-en)
+      og [chai](http://chaijs.com/api/bdd/) (assertion-biblioteket).
 12. Start node-programmet.
-    * `npm start` kjører index.js i node.
-    * Dette starter en http-server på [port 5000](http://localhost:5000).
+    * `npm start` kjører todoapp.js i node.
+    * Dette starter en http-server på [port 3000](http://localhost:3000).
 13. Debug programmet med chrome dev-tools:
-    * `npm debug` kjører index.js via via node-inspector.
+    * `debug-node todoapp.js` kjører todoapp.js via via node-inspector.
     * Åpne [http://127.0.0.1:8080/debug?port=5858](http://127.0.0.1:8080/debug?port=5858)
     i Chrome.
 
