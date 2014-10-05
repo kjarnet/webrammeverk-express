@@ -1,9 +1,28 @@
 var express = require('express');
 var path = require('path');
 var bodyParser = require('body-parser');
+var mongoose = require('mongoose');
+var fs = require('fs');
 
 var routes = require('./routes/index');
 var users = require('./routes/users');
+
+// connect to db
+
+var data = fs.readFileSync('./mongo_creds.json'),
+    mongoCreds;
+try {
+    mongoCreds = JSON.parse(data);
+    console.dir(mongoCreds);
+} catch (err) {
+    console.log('Could not parse mongo_creds.json.');
+    console.log(err);
+}
+mongoose.connection.on("open", function () {
+  debug('connected to mongo db');
+});
+mongoose.connect('mongodb://'+mongoCreds.username+':'+mongoCreds.password+'@'+mongoCreds.host+':'+mongoCreds.port+'/'+mongoCreds.dbname);
+
 
 var app = express();
 
