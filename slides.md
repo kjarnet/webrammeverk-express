@@ -27,7 +27,7 @@ Notes:
 
 ## Bakgrunn
 
-[![](gamle_perbill.png)](gamle_perbill.png)
+bilde placeholder.
 
 Notes:
 Jeg tenkte snakke litt om **NSB Lisa-prosjektet**,
@@ -76,7 +76,7 @@ administrasjon av Periodebilletter.
 
 ## Domenemodell
 
-[![](perbill_er_diag.png)](perbill_er_diag.png)
+bilde placeholder
 
 Notes:
 
