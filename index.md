@@ -21,7 +21,7 @@ layout: default
     * Installer [Heroku toolbelt](https://devcenter.heroku.com/articles/getting-started-with-nodejs#set-up)
     * Lag en ny heroku-app.
     * legg til heroku som remote for git-repoet: `heroku git:remote -a din-heroku-app`.
-10. Installer prosjektets avhengigheter.
+5. Installer prosjektets avhengigheter.
     * npm bruker [package.json](http://browsenpm.org/package.json)
     fila til å beskrive avhengigheter.
     * `npm install` installerer pakker beskrevet i "dependencies" og "devDependencies"
@@ -30,8 +30,9 @@ layout: default
         * [mocha](http://visionmedia.github.io/mocha/), [chai](http://chaijs.com/) og [supertest](https://github.com/visionmedia/supertest) for enhetstesting
         * [debug](https://github.com/visionmedia/debug) for logging
         * [hogan (hjs)](http://twitter.github.io/hogan.js/) templating
+        * [mongoose](http://mongoose.com/) MongoDB klient
         * og express.
-11. Kjør tester
+6. Kjør tester
     * npm kan også kjøre kommandoer definert i "scripts" i package.json.
     * `npm test` bruker testrunner-en "mocha" til å kjøre testene under test/-folderen.
     * Dokumentasjon for testrammeverk: [mocha](http://visionmedia.github.io/mocha/) (test-runner-en),
@@ -41,10 +42,10 @@ layout: default
       `./node_modules/mocha/bin/mocha -w`.
     * Du kan også installere mocha globalt for å slippe `./node_modules/mocha/bin` foran "mocha":
       `sudo npm install -g mocha`
-12. Start node-programmet.
+7. Start node-programmet.
     * `npm start` kjører todoapp.js i node.
     * Dette starter en http-server på [port 3000](http://localhost:3000).
-13. Debug programmet med chrome dev-tools:
+8. Debug programmet med chrome dev-tools:
     * `node-debug /bin/www` kjører todoapp.js via via node-inspector.
     * Åpne [http://127.0.0.1:8080/debug?port=5858](http://127.0.0.1:8080/debug?port=5858)
     i Chrome.
@@ -54,6 +55,10 @@ layout: default
         * Åpne [http://127.0.0.1:8080/debug?port=5858](http://127.0.0.1:8080/debug?port=5858)
         i Chrome. Den vil da være pauset på første linje i mocha-test-runneren.
         * Åpne test-fila du vil debugge, sett en breakpoint og klikk "Resume" (F8).
+9. Vi vil bruke [MongoDB](http://mongodb.org) som lager.
+   Jeg har satt opp en server alle kan bruke,
+   men hvis du har lyst kan du installere lokalt.
+
 
     
 
