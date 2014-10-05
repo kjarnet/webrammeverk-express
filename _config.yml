@@ -11,5 +11,6 @@ url: "http://kjarnet.no" # the base hostname & protocol for your site
 github_username:  kjarnet
 
 # Build settings
-markdown: kramdown
+# markdown: kramdown
+markdown: redcarpet
 
