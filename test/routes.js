@@ -21,10 +21,10 @@ describe('GET /', function(){
     });
 });
 
-describe('GET /users', function(){
+describe('GET /todos', function(){
     it('respond with json', function(done){
         request(app)
-        .get('/user')
+        .get('/todos')
         .set('Accept', 'application/json')
         .expect('Content-Type', /json/)
         .expect(200, done);

@@ -1,6 +1,8 @@
 var express = require('express');
 var router = express.Router();
 var Todo = require('../models/todo');
+var globals = require('../globals');
+var debug = require('debug')(globals.appName);
 
 /* GET all todos. */
 router.get('/', function(req, res) {
