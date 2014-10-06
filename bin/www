@@ -1,5 +1,6 @@
 #!/usr/bin/env node
-var debug = require('debug')('webrammeverk-express');
+var globals = require('../globals');
+var debug = require('debug')(globals.appName);
 var app = require('../todoapp');
 
 app.set('port', process.env.PORT || 3000);

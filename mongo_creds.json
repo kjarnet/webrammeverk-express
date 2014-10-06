@@ -1,8 +1,8 @@
 {
-    "username": "fjas",
-    "password": "fjas",
-    "host": "fjas",
-    "port": 12345,
-    "dbname": "fjas"
+    "username": "webrammeverk",
+    "password": "7WebRammeverk",
+    "host": "linode.kjarnet.no",
+    "port": 27000,
+    "dbname": "todos"
 }
 
