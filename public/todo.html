@@ -1,0 +1,156 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title>TodoApp</title>
+	<script src="javascripts/vendor.js"></script>
+	<link rel="stylesheet" type="text/css" href="stylesheets/todo.css">
+</head>
+<body>
+<div id="todoApp"></div>
+<!--script src="javascripts/react-todo.js" /-->
+<script type="text/jsx">
+/**
+* @jsx React.DOM
+*/
+var TodoApp = React.createClass({
+	getTodos: function() {
+		$.ajax({
+			url: this.props.url,
+			success: function(data) {
+				this.setState({data: data});
+			}.bind(this)
+		});
+	},
+	getInitialState: function() {
+		return {data: []};
+	},
+	componentWillMount: function() {
+		this.getTodos();
+	},
+	render: function() {
+		return (
+			<div className="todoApp">
+				<h1>TodoApp</h1>
+				<TodoList data={this.state.data} url={this.props.url} updateList={this.getTodos} />
+				<TodoForm url={this.props.url} updateList={this.getTodos} />
+			</div>
+		);
+	}
+});
+
+var TodoList = React.createClass({
+	render: function() {
+		var url = this.props.url;
+		var that = this;
+		var todos = this.props.data.map(function(todo) {
+			return <TodoItem
+                updateList={that.updateList}
+                url={url}
+                key={todo._id}
+                title={todo.title}
+                completed={todo.completed}
+                order={todo.order} />
+		});
+		return (
+			<div className="todoList">
+				<button onClick={this.updateList}>Oppdater</button>
+				{todos}
+			</div>
+		);
+	},
+	updateList: function() {
+		this.props.updateList();
+	},
+});
+
+var TodoItem = React.createClass({
+	updateList: function() {
+		this.props.updateList();
+	},
+	render: function() {
+		var classString = '';
+		if(this.props.completed) {
+			classString += 'completed';
+		}
+		return (
+			<div className="todoItem">
+				<span onClick={this.handleEdit} className={classString}>{this.props.title}</span>
+				<button onClick={this.handleDelete}>Remove</button>
+			</div>
+		);
+	},
+	handleDelete: function() {
+		var id = this.props.key;
+
+		this.doDelete(id);
+	},
+	doDelete: function(id) {
+		$.ajax({
+			url: this.props.url + id,
+			type: 'DELETE',
+			success: function() {
+				this.updateList();	
+			}.bind(this)
+		});
+	},
+	handleEdit: function() {
+		var id = this.props.key;
+		var title = this.props.title;
+		var completed = !this.props.completed;
+		var order = this.props.order;
+		this.doEdit(id, JSON.stringify({"_id": id, "title": title, "completed": completed, "order": order}));
+	},
+	doEdit: function(id, todo) {
+		$.ajax({
+			url: this.props.url + id,
+			type: 'PUT',
+			dataType: "json",
+			contentType: "application/json; charset=utf-8",
+			data: todo,
+			success: function(data) {
+				this.updateList();
+			}.bind(this)
+		});
+	}
+});
+
+var TodoForm = React.createClass({
+	render: function() {
+		return (
+			<div className="todoForm">
+				<input type="text" ref="todo" onKeyPress={this.handleKeyPress} />
+			</div>
+		);
+	},
+	handleKeyPress: function(e) {
+		if(e.which !== 13) {
+			return;
+		}
+		var todo = this.refs.todo.getDOMNode().value.trim();
+		if(todo) {
+			this.doSave(JSON.stringify({"title": todo, "completed": false, "order": 1}));
+			this.refs.todo.getDOMNode().value = '';
+		}
+		return false;
+	},
+	doSave: function(todo) {
+		$.ajax({
+			url: this.props.url,
+			type: 'POST',
+			dataType: "json",
+			contentType: "application/json; charset=utf-8",
+			data: todo,
+			success: function(data) {
+				this.props.updateList();
+			}.bind(this)
+		});
+	},
+});
+
+React.renderComponent(
+	<TodoApp url="http://localhost:3000/todos/" />,
+	document.getElementById('todoApp')
+);
+</script>
+</body>
+</html>
