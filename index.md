@@ -15,7 +15,8 @@ layout: default
     For å installere globalt må du bruke parameteret `-g` eller `--global`.
     (I ubuntu og osx må du kjøre kommandoen med sudo for å installere globalt.)
     * `sudo npm install -g node-inspector`
-    * Node-Inspector fungerer kun med webkit-baserte browsere (Chrome, Opera, Safari ...).
+    * Node-Inspector fungerer kun med webkit-baserte browsere (Chrome, Opera, Safari ...)
+      og bruker [Chrome DevTools](https://developer.chrome.com/devtools).
 3. Klon git-repoet: git clone https://github.com/kjarnet/webrammeverk-express.git
 4. Hvis du vil deploye til Heroku:
     * Installer [Heroku toolbelt](https://devcenter.heroku.com/articles/getting-started-with-nodejs#set-up)
@@ -45,7 +46,7 @@ layout: default
 7. Start node-programmet.
     * `npm start` kjører todoapp.js i node.
     * Dette starter en http-server på [port 3000](http://localhost:3000).
-8. Debug programmet med chrome dev-tools:
+8. Debug programmet med [Chrome DevTools](https://developer.chrome.com/devtools):
     * `node-debug /bin/www` kjører todoapp.js via via node-inspector.
     * Åpne [http://127.0.0.1:8080/debug?port=5858](http://127.0.0.1:8080/debug?port=5858)
     i Chrome.
