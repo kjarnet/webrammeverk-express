@@ -6,9 +6,10 @@ layout: default
 
 0. Installer [node](http://nodejs.org).
 1. Sett opp ditt favoritt IDE for JavaScript utvikling. Tips:
-    * IntelliJ har plugins for JavaScript og Node.
+    * IntelliJ har plugins for JavaScript og Node
+      (jeg har satt opp et node-prosjekt for IntelliJ som jeg har sjekket inn i git-repo).
     * Det finnes plugins for JavaScript-linteren "JSHint" for de fleste editorer.
-    IntelliJ har støtte for dette gjennom JavaScript-pluginet.
+      IntelliJ har støtte for dette gjennom JavaScript-pluginet.
 2. Installer [Node-Inspector](https://github.com/node-inspector/node-inspector) for debugging.
     * Installeres via pakkehåndtereren til node, "npm".
     * npm installerer som default pakker lokalt til mappa `node_modules` i current directory.
@@ -17,7 +18,7 @@ layout: default
     * `sudo npm install -g node-inspector`
     * Node-Inspector fungerer kun med webkit-baserte browsere (Chrome, Opera, Safari ...)
       og bruker [Chrome DevTools](https://developer.chrome.com/devtools).
-3. Klon git-repoet: git clone https://github.com/kjarnet/webrammeverk-express.git
+3. Klon git-repoet: `git clone https://github.com/kjarnet/webrammeverk-express.git`
 4. Hvis du vil deploye til Heroku:
     * Installer [Heroku toolbelt](https://devcenter.heroku.com/articles/getting-started-with-nodejs#set-up)
     * Lag en ny heroku-app.
@@ -61,5 +62,5 @@ layout: default
    men hvis du har lyst kan du installere lokalt.
 
 
-    
+
 
