@@ -1,11 +1,14 @@
 <!DOCTYPE html>
 <html>
-  <head>
+<head>
     <title>{{ title }}</title>
-    <link rel='stylesheet' href='/stylesheets/index.css' />
-  </head>
-  <body>
+    <link rel='stylesheet' href='/stylesheets/index.css'/>
+</head>
+<body>
     <h1>{{ title }}</h1>
+
     <p>Welcome to {{ title }}</p>
-  </body>
+    <a href="todo.html">Todo app</a>
+
+</body>
 </html>

@@ -39,7 +39,29 @@ describe('Routes', function () {
     describe('PUT /todos/:id', function () {
         it('respond with json', function (done) {
             request(app)
-                .put('/todos')
+                .put('/todos/543453e0e8120f560ee4993b')
+                .send({title: 'test-todo', completed: false})
+                .set('Accept', 'application/json')
+                .expect('Content-Type', /json/)
+                .expect(200, done);
+        });
+    });
+
+    describe('POST /todos/', function () {
+        it('respond with json', function (done) {
+            request(app)
+                .post('/todos/')
+                .send({title: 'test-todo', completed: false})
+                .set('Accept', 'application/json')
+                .expect('Content-Type', /json/)
+                .expect(200, done);
+        });
+    });
+
+    describe('DELETE /todos/:id', function () {
+        it('respond with json', function (done) {
+            request(app)
+                .delete('/todos/543453e0e8120f560ee4993b')
                 .set('Accept', 'application/json')
                 .expect('Content-Type', /json/)
                 .expect(200, done);
